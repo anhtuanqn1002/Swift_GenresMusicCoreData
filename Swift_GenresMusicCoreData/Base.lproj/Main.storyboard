@@ -1,25 +1,152 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dn9-9Z-rai">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Songs-->
+        <scene sceneID="JDm-1I-YMG">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kya-Sx-idK" customClass="SongsViewController" customModule="Swift_GenresMusicCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="6dZ-li-ybh"/>
+                        <viewControllerLayoutGuide type="bottom" id="A44-0w-ycG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="m80-sd-dfO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RGU-Da-4xe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kya-Sx-idK" id="6vR-g7-9do"/>
+                                    <outlet property="delegate" destination="Kya-Sx-idK" id="qlP-c6-Qfn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RGU-Da-4xe" firstAttribute="top" secondItem="m80-sd-dfO" secondAttribute="top" id="3Y1-SU-WfA"/>
+                            <constraint firstItem="RGU-Da-4xe" firstAttribute="leading" secondItem="m80-sd-dfO" secondAttribute="leading" id="Dip-op-xbE"/>
+                            <constraint firstAttribute="trailing" secondItem="RGU-Da-4xe" secondAttribute="trailing" id="iwH-IU-f8V"/>
+                            <constraint firstAttribute="bottom" secondItem="RGU-Da-4xe" secondAttribute="bottom" id="yUW-1g-Xhk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Songs" id="EcB-N8-le8"/>
+                    <connections>
+                        <outlet property="tableView" destination="RGU-Da-4xe" id="3dz-BE-Fsn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39D-BR-Bv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1559" y="641"/>
+        </scene>
+        <!--Genres-->
+        <scene sceneID="sK2-CK-hso">
+            <objects>
+                <viewController id="4oO-Kn-hbP" customClass="GenresViewController" customModule="Swift_GenresMusicCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VVD-mG-9CR"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Js-vr-4YU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dZ9-Lo-yHM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w3W-L0-xmN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4oO-Kn-hbP" id="Gr6-uj-HCW"/>
+                                    <outlet property="delegate" destination="4oO-Kn-hbP" id="wLO-yC-AA4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="w3W-L0-xmN" secondAttribute="bottom" id="0n0-YU-Qab"/>
+                            <constraint firstItem="w3W-L0-xmN" firstAttribute="top" secondItem="dZ9-Lo-yHM" secondAttribute="top" id="GCa-rv-2F1"/>
+                            <constraint firstAttribute="trailing" secondItem="w3W-L0-xmN" secondAttribute="trailing" id="bVU-yt-bco"/>
+                            <constraint firstItem="w3W-L0-xmN" firstAttribute="leading" secondItem="dZ9-Lo-yHM" secondAttribute="leading" id="gT4-sG-Pv3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Genres" id="YWy-wW-UhH">
+                        <barButtonItem key="rightBarButtonItem" image="addGenres.png" id="TOo-M2-OCX">
+                            <connections>
+                                <action selector="addNewSong:" destination="4oO-Kn-hbP" id="Dfj-kl-QrF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="w3W-L0-xmN" id="gJa-DA-m1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfv-qk-9tH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="-20"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e6J-3D-2kS">
+            <objects>
+                <tabBarController id="dn9-9Z-rai" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dgG-Jv-p8y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="e1A-4F-dv2" kind="relationship" relationship="viewControllers" id="2WU-B4-aeD"/>
+                        <segue destination="oh3-Uw-gtF" kind="relationship" relationship="viewControllers" id="uFV-e3-wXc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5y-Vp-HRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-73" y="311"/>
+        </scene>
+        <!--Genres-->
+        <scene sceneID="vV3-Zw-5rv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e1A-4F-dv2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Genres" image="icon_tab_genres.png" id="NZI-jh-EEo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5KN-PX-yyi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4oO-Kn-hbP" kind="relationship" relationship="rootViewController" id="ob4-lV-2nS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RB2-Sl-CMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="-20"/>
+        </scene>
+        <!--Songs-->
+        <scene sceneID="5Aq-5O-OGg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oh3-Uw-gtF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Songs" image="icon_tab_download.png" id="p9R-HH-j7d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ftx-Ft-Ogj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kya-Sx-idK" kind="relationship" relationship="rootViewController" id="faG-FL-Wx2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5W-wK-M5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="641"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addGenres.png" width="25" height="25"/>
+        <image name="icon_tab_download.png" width="17" height="25"/>
+        <image name="icon_tab_genres.png" width="24" height="24"/>
+    </resources>
 </document>

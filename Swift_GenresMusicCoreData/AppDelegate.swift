@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let tabbar = self.window?.rootViewController as! UITabBarController
+        let genresVC = tabbar.viewControllers![0].childViewControllers[0] as! GenresViewController
+        let songsVC = tabbar.viewControllers![1].childViewControllers[0] as! SongsViewController
+//        genresVC.title = "uuu"
+        genresVC.delegate = songsVC
+        songsVC.delegate = genresVC
         return true
     }
 
